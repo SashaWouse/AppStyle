@@ -1,16 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import {Image, Text, TouchableOpacity, View, StyleSheet, Button, Platform, SafeAreaView, StatusBar, ImageBackground} from 'react-native';
-
-const image = { uri: "http://placekitten.com/160/161" };
-
-const Header = ({}) => {
-    return (
-        <ImageBackground source={image} resizeMode="cover" style={styles.image_bg}>
-            <Text style={styles.text}>Inside</Text>
-        </ImageBackground>
-    );
-};
+import {Image, Text, TouchableOpacity, View, StyleSheet, Button, Platform, SafeAreaView, StatusBar} from 'react-native';
 
 const ListItem = ({singleMedia}) => {
     console.log(singleMedia);
@@ -37,6 +27,8 @@ const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 10,
     backgroundColor: '#252834',
+    justifyContent: 'space-between',
+    alignContent: 'space-between',
     borderRadius: 6,
     flex: 1,
     },
@@ -49,13 +41,16 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginBottom: 30,
     marginLeft: 10,
+    marginRight: 10,
     height: 70,
     width: 150,
-    borderBottomLeftRadius: '50%',
+    borderBottomLeftRadius: 50,
     },
     textbox: {
     flex: 2,
     padding: 10,
+    marginLeft: 10,
+    width: '40%',
     },
     listTitle: {
     fontWeight: 'bold',
@@ -63,9 +58,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     paddingBottom: 15,
     },
-    image_bg: {
-        height: '100%',
-    }
 });
 
 ListItem.propTypes = {
